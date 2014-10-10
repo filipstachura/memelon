@@ -3,12 +3,11 @@
 /* CreateMeme: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.CreateMeme.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+  'keyup input': function (e, tmpl) {
+      var topText = tmpl.find('#top-line').value;
+      var bottomText = tmpl.find('#bottom-line').value;
+      Meme('example.jpg', 'canvas', topText, bottomText);
+   }
 });
 
 Template.CreateMeme.helpers({
@@ -27,6 +26,7 @@ Template.CreateMeme.created = function () {
 };
 
 Template.CreateMeme.rendered = function () {
+  Meme('example.jpg', 'canvas');
 };
 
 Template.CreateMeme.destroyed = function () {
