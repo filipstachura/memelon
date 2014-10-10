@@ -1,0 +1,13 @@
+/*****************************************************************************/
+/* CreateMeme: Style */
+/*****************************************************************************/
+
+#top-line, #bottom-line {
+  padding: .5em;
+  border: 1px solid #999;
+  font: inherit;
+}
+#canvas {
+  display: block;
+  margin: 1em auto;
+}

@@ -4,7 +4,16 @@
 /*****************************************************************************/
 Template.CreateMemeButton.events({
   'click #make-meme': function(event, template) {
-      console.log("clicked");
+      MeteorCamera.getPicture(function (error, data) {
+        if (! error) {
+          Session.set("newPicture", data);
+          Router.go('create.meme');
+          // Memes.insert({ picture:data });
+        } else {
+          console.log("Error!");
+          console.log(error);
+        }
+      })
   }
 });
 
