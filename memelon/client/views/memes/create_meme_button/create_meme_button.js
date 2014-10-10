@@ -6,7 +6,9 @@ Template.CreateMemeButton.events({
   'click #make-meme': function(event, template) {
       MeteorCamera.getPicture(function (error, data) {
         if (! error) {
-          Memes.insert({ picture:data });
+          Session.set("newPicture", data);
+          Router.go('create.meme');
+          // Memes.insert({ picture:data });
         } else {
           console.log("Error!");
           console.log(error);
