@@ -6,12 +6,12 @@ Template.CreateMeme.events({
   'keyup input': function (event, template) {
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
-      Meme(Session.get("newPicture"), 'canvas', topText, bottomText);
+      Meme(Session.get("newPicture"), 'preview-canvas', topText, bottomText);
   },
   'click #save': function(event, template) {
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
-      var imageBase64 = template.find("#canvas").toDataURL();
+      var imageBase64 = template.find("#preview-canvas").toDataURL();
       Memes.insert({
         picture: imageBase64,
         topText: topText,
@@ -38,7 +38,7 @@ Template.CreateMeme.created = function () {
 };
 
 Template.CreateMeme.rendered = function () {
-  Meme(Session.get("newPicture"), 'canvas');
+  Meme(Session.get("newPicture"), 'preview-canvas');
 };
 
 Template.CreateMeme.destroyed = function () {
