@@ -15,4 +15,5 @@ Router.map(function () {
       this.route('home', {path: '/'});
   */
   this.route('memes.index', {path: '/'});
+  this.route('create.meme', {path: '/create_meme'});
 });
