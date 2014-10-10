@@ -1,6 +1,12 @@
 
 <template name="MemesIndex">
-  client/views/memes/memes_index/memes_index.html
+  <ul class="memes-list">
+    {{#each items}}
+      <li class="meme-item">
+      {{> MemeItem }}
+      </li>
+    {{/each}}
+  </ul>
 
   {{> CreateMemeButton }}
 </template>

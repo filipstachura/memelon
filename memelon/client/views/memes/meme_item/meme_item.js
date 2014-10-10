@@ -1,8 +1,8 @@
 
 /*****************************************************************************/
-/* MemesIndex: Event Handlers and Helpersss .js*/
+/* MemeItem: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MemesIndex.events({
+Template.MemeItem.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -11,22 +11,25 @@ Template.MemesIndex.events({
    */
 });
 
-Template.MemesIndex.helpers({
-   items: function () {
-     return Memes.find();
-   }
+Template.MemeItem.helpers({
+  /*
+   * Example:
+   *  items: function () {
+   *    return Items.find();
+   *  }
+   */
 });
 
 /*****************************************************************************/
-/* MemesIndex: Lifecycle Hooks */
+/* MemeItem: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MemesIndex.created = function () {
+Template.MemeItem.created = function () {
 };
 
-Template.MemesIndex.rendered = function () {
+Template.MemeItem.rendered = function () {
 };
 
-Template.MemesIndex.destroyed = function () {
+Template.MemeItem.destroyed = function () {
 };
 
 
