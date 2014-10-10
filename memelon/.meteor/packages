@@ -4,5 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+iron:router@1.0.0-pre3
+mizzao:bootstrap-3
+less
+
