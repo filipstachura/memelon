@@ -47,7 +47,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
-Meme = function(image, canvas, top, bottom) {
+Meme = function(imageBase64, canvas, top, bottom) {
+
 
 	/*
 	Default top and bottom
@@ -84,15 +85,12 @@ Meme = function(image, canvas, top, bottom) {
 	*/
 
 	// If there's no image, set it to a dummy value to trigger an error
-	if (!image)
-		image = 0;
+	if (!imageBase64)
+		imageBase64 = 0;
 
 	// Convert it from a string
-	if (image.toUpperCase) {
-		var src = image;
-		image = new Image();
-		image.src = src;
-	}
+	image = new Image();
+	image.src = imageBase64;
 
 	// Set the proper width and height of the canvas
 	var setCanvasDimensions = function(w, h) {

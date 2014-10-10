@@ -2,12 +2,12 @@
 /*****************************************************************************/
 /* CreateMeme: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
+
 Template.CreateMeme.events({
   'keyup input': function (e, tmpl) {
       var topText = tmpl.find('#top-line').value;
       var bottomText = tmpl.find('#bottom-line').value;
-      console.log(Session.get("newPicture"));
-      Meme('example.jpg', 'canvas', topText, bottomText);
+      Meme(Session.get("newPicture"), 'canvas', topText, bottomText);
    }
 });
 
@@ -27,8 +27,7 @@ Template.CreateMeme.created = function () {
 };
 
 Template.CreateMeme.rendered = function () {
-  console.log(Session.get("newPicture"));
-  Meme('example.jpg', 'canvas');
+  Meme(Session.get("newPicture"), 'canvas');
 };
 
 Template.CreateMeme.destroyed = function () {
