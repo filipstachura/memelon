@@ -13,7 +13,7 @@ Template.MemesIndex.events({
 
 Template.MemesIndex.helpers({
    items: function () {
-     return Memes.find();
+     return Memes.find({}, { sort: { createdAt: -1 } });
    }
 });
 
