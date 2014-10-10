@@ -3,12 +3,9 @@
 /* CreateMemeButton: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.CreateMemeButton.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+  'click #make-meme': function(event, template) {
+      console.log("clicked");
+  }
 });
 
 Template.CreateMemeButton.helpers({
