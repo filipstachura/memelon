@@ -6,6 +6,7 @@ Template.CreateMeme.events({
   'keyup input': function (e, tmpl) {
       var topText = tmpl.find('#top-line').value;
       var bottomText = tmpl.find('#bottom-line').value;
+      console.log(Session.get("newPicture"));
       Meme('example.jpg', 'canvas', topText, bottomText);
    }
 });
@@ -26,6 +27,7 @@ Template.CreateMeme.created = function () {
 };
 
 Template.CreateMeme.rendered = function () {
+  console.log(Session.get("newPicture"));
   Meme('example.jpg', 'canvas');
 };
 
