@@ -12,7 +12,12 @@ Template.CreateMeme.events({
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
       var imageBase64 = template.find("#canvas").toDataURL();
-      Memes.insert({picture: imageBase64, topText: topText, bottomText: bottomText});
+      Memes.insert({
+        picture: imageBase64,
+        topText: topText,
+        bottomText: bottomText,
+        createdAt: new Date
+      });
       Router.go("memes.index");
   }
 });
