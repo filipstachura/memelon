@@ -1,13 +1,19 @@
 
 <template name="MemesIndex">
-  <ul class="memes-list">
-    {{#each items}}
-      <li class="meme-item">
-      {{> MemeItem }}
-      </li>
-    {{/each}}
-  </ul>
+    <div id="content-container">
+      {{#each items}}
+          <div class="row">
+              {{> MemeItem }}
+          </div>
+      {{/each}}
+    </div>
 
-  {{> CreateMemeButton }}
+    <div class="row">
+        <div id="button-container">
+            <div>
+                {{> CreateMemeButton }}
+            </div>
+        </div>
+    </div>
 </template>
 
