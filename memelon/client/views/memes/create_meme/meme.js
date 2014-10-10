@@ -110,9 +110,9 @@ Meme = function(imageBase64, canvas, top, bottom) {
 		var fontSize = (canvas.height / 8);
 		var x = canvas.width / 2;
 		if (typeof y === 'undefined') {
-			y = fontSize;
+			y = fontSize + 20;
 			if (topOrBottom === 'bottom')
-				y = canvas.height - 10;
+				y = canvas.height - 30;
 		}
 
 		// Should we split it into multiple lines?
