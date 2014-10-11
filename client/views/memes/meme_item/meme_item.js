@@ -33,3 +33,6 @@ Template.MemeItem.destroyed = function () {
 };
 
 
+UI.registerHelper('formatTime', function (time) {
+    return moment(time).calendar();
+});

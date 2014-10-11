@@ -41,6 +41,7 @@ mizzao:bootstrap-3@3.2.0_1
 mobile-status-bar@1.0.0
 mongo@1.0.6
 mrt:jquery-ui@1.9.2
+mrt:moment@2.8.1
 observe-sequence@1.0.2
 ordered-dict@1.0.0
 random@1.0.0
