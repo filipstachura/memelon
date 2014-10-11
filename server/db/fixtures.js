@@ -1,9 +1,11 @@
 Meteor.startup( function () {
   if(Circles.find().count() > 0) return;
 
-  for(var i = 0; i < 3; i++){
+  var circles = ["public", "hackzurich", "work", "college", "buddies"]
+
+  for(var circleName in circles){
     Circles.insert({
-      name: "Circle " + i,
+      name: circles[circleName],
       createdAt: new Date
     });
   }
