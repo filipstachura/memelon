@@ -67,40 +67,37 @@
         <div class="tab-content sidetabs">
           <div class="tab-pane active">
             <ul class="sidemenu">
-              <li class="sidebar-header">Menu</li>
+              <!-- <li class="sidebar-header">Menu</li> -->
               <li class="active">
-              <a>
-                <span class="icon"><i class="fa fa-dashboard"></i></span>
+              <a href="{{pathFor route='memes.index'}}">
+                <span class="icon"><i class="fa fa-film"></i></span>
                 <span class="name">Streams</span>
                 <span class="number pull-right"><span class="label label-primary">4</span></span>
               </a>
               </li>
 
-              <li>
-              <a>
-                <span class="icon"><i class="fa fa-dashboard"></i></span>
-                <span class="name">Create circle</span>
-              </a>
-              </li>
 
                 <li>
                     <a href="javascript:void(0);">
-                        <span class="icon"><i class="fa fa-chain"></i></span>
+                        <span class="icon"><i class="fa fa-users"></i></span>
                         <span class="name">Manage circle</span>
                         <span class="arrow"><i class="arrow fa fa-angle-right pull-right"></i></span>
                     </a>
                     <ul class="sidebar-dropdown" style="display: block;">
-                        <li><a href="general-elements.html">General</a></li>
-                                  <li><a href="typography-elements.html">Typography</a></li>
-                                  <li><a href="buttons-elements.html">Buttons</a></li>
-                                  <li><a href="widgets-elements.html">Widgets</a></li>
-                                  <li><a href="slider-elements.html">Slider</a></li>
-                                  <li><a href="panels-elements.html">Panels</a></li>
-                                  <li><a href="alerts-elements.html">Alerts</a></li>
-                                  <li><a href="tabs-accordions-elements.html">Tabs &amp; Accordions</a></li>
-                                  <li><a href="modals-popover-elements.html">Modals &amp; Popover</a></li>
-                          </ul>
+
+                    {{#each circles}}
+                        <li>{{> CircleMenuItem }}</li>
+                    {{/each}}
+                    </ul>
                 </li>
+
+              <li>
+              <a>
+                <span class="icon"><i class="fa fa-plus-circle"></i></span>
+                <span class="name">Create circle</span>
+              </a>
+              </li>
+
 
             </ul>
 
