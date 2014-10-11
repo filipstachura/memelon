@@ -7,7 +7,7 @@
   <div>
     {{#each circles}}
         <div class="row">
-            {{> CircleItem }}
+            <a href="{{pathFor route='circle.memes'}}"> {{ name }} </a>
         </div>
     {{/each}}
   </div>
