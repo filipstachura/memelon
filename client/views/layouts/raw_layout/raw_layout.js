@@ -1,8 +1,8 @@
 
 /*****************************************************************************/
-/* MemeItem: Event Handlers and Helpersss .js*/
+/* MasterLayout: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MemeItem.events({
+Template.MasterLayout.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -11,7 +11,7 @@ Template.MemeItem.events({
    */
 });
 
-Template.MemeItem.helpers({
+Template.MasterLayout.helpers({
   /*
    * Example:
    *  items: function () {
@@ -21,23 +21,15 @@ Template.MemeItem.helpers({
 });
 
 /*****************************************************************************/
-/* MemeItem: Lifecycle Hooks */
+/* MasterLayout: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MemeItem.created = function () {
+Template.MasterLayout.created = function () {
 };
 
-Template.MemeItem.rendered = function () {
+Template.MasterLayout.rendered = function () {
 };
 
-Template.MemeItem.destroyed = function () {
+Template.MasterLayout.destroyed = function () {
 };
 
 
-UI.registerHelper('formatTime', function (time) {
-    return moment(time).calendar();
-});
-
-UI.registerHelper('nameOfCircle', function (id) {
-    var circle = Circles.findOne(id)
-    return (circle ? '#' + circle.name : '');
-});

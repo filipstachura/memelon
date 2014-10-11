@@ -1,15 +1,22 @@
 <template name="CreateMeme">
 
   <div id="content-container">
-    <input id="top-line" placeholder="top line"><br />
     <canvas id="preview-canvas"></canvas>
-    <input id="bottom-line" placeholder="bottom line">
+    <input id="top-line" placeholder="Top text"><br />
+    <input id="bottom-line" placeholder="Bottom text">
     <h2>Choose a circle:</h2>
     <div class="btn-group-vertical">
       {{#each circles}}
         <button type="button" class="btn btn-default circle-button">{{ name }}</button>
       {{/each}}
     </div>
+
+    <div id="bottom-panel-holder">
+        <button id="save-meme" class="btn"> 
+            <i class="fa fa-4x fa-camera-retro"></i> 
+        </button>
+    </div>
   </div>
+
 
 </template>
