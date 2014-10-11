@@ -6,7 +6,8 @@ config = {
     requirements: {
       width: 600,
       height: 450,
-      quality: 80
+      quality: 80,
+      correctOrientation: true
     }
   }
 };

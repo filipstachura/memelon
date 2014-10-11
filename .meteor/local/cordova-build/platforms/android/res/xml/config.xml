@@ -26,10 +26,10 @@
     </feature>
     <name>memelon</name>
     <description>
-        Share your memeries within circles. Privately.
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="hello@memelon.pl" href="http://memelon.pl">
-        Memelon Team #hackzurich
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <content src="index.html" />
     <access origin="*" />
