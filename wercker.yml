@@ -10,4 +10,6 @@ deploy:
   steps:
     - script:
         name: deploy to memelon.meteor.com 
-        code: meteor deploy memelon.meteor.com
+        code: |
+          curl https://install.meteor.com/ | sh
+          meteor deploy memelon.meteor.com
