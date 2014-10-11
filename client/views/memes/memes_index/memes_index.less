@@ -6,6 +6,7 @@
   height: 90%;
   overflow-y: scroll;
   overflow-x: hidden;
+  background: rgb(200, 225, 250);
 }
 
 #content-container .row {
@@ -17,3 +18,12 @@
   padding: 0;
 }
 
+#content-container div.row:nth-child(even) {
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+}
+
+#content-container div.row:nth-child(odd) {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
