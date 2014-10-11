@@ -33,3 +33,10 @@ Template.MemeItem.destroyed = function () {
 };
 
 
+UI.registerHelper('formatTime', function (time) {
+    return moment(time).calendar();
+});
+
+UI.registerHelper('nameOfCircle', function (id) {
+    return '#' + Circles.findOne(id).name;
+});

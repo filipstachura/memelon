@@ -9,4 +9,5 @@ mizzao:bootstrap-3
 less
 mdg:camera
 mrt:jquery-ui
+mrt:moment
 
