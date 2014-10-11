@@ -7,7 +7,7 @@ MemesIndexController = RouteController.extend({
     console.log("circleId" + circleId);
     var circles = Meteor.subscribe('circles_index');
     var memes = Meteor.subscribe('memes_index', circleId);
-    NProgress.start();
+//    NProgress.start();
     return [circles, memes];
   },
 
@@ -31,13 +31,6 @@ MemesIndexController = RouteController.extend({
   },
 
   action: function () {
-    if (this.ready()) {
-      NProgress.done();
-      //this.render();
-    } else {
-    }
-//      
-//      this.stop();
-//    }
+      this.render();
   }
 });
