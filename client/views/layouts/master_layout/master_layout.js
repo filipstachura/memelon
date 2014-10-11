@@ -42,21 +42,6 @@ Template.MasterLayout.rendered = function () {
 			 }
 		});
 
-		//Settings dropdown
-		$('#fixed-sidebar-link').click(function(){
-			$(this).closest("li").addClass('active');
-			$('#fixed-navbar-link').closest("li").removeClass('active');
-			$('.sidebar').addClass('fixed');
-			$('.main-header').addClass('navbar-fixed-top');
-		});
-
-		$('#fixed-navbar-link').click(function(){
-			$('#fixed-navbar-link').closest("li").addClass('active');
-			$('#fixed-sidebar-link').closest("li").removeClass('active');
-			$('.main-header').addClass('navbar-fixed-top');
-			$('.sidebar').removeClass('fixed');
-		});
-
 		//Sidebar menus dropdown
 		$('.sidemenu > li > a').click(function(e){
 			console.log()
