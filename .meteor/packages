@@ -10,4 +10,5 @@ less
 mrt:jquery-ui
 mrt:moment
 mr:camera
+mrt:nprogress
 
