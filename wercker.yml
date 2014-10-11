@@ -1,4 +1,4 @@
-box: mies/meteor
+box: wercker/nodejs
 build:
   steps:
     - script:
@@ -6,9 +6,3 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) runnin:g"
-    - script:
-        name: install laika
-        code: sudo npm install -g laika
-    - script:
-        name: run laika
-        code: laika
