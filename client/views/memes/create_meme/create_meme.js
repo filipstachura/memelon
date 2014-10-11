@@ -4,8 +4,8 @@
 /*****************************************************************************/
 Template.CreateMeme.events({
   'keyup input': function (event, template) {
-      var topText = template.find('#top-line').value;
-      var bottomText = template.find('#bottom-line').value;
+      var topText = template.find('#top-line').value.toUpperCase();
+      var bottomText = template.find('#bottom-line').value.toUpperCase();
       Meme(Session.get("newPicture"), 'preview-canvas', topText, bottomText);
   },
   'click .circle-button': function(event, template) {
