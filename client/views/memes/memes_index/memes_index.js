@@ -3,6 +3,11 @@
 /* MemesIndex: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.MemesIndex.events({
+  'change #selected_circle': function (event, template) {
+    var circleId = template.find('.select-circle-option:selected').value;
+    Router.go('circle.memes', {_id: circleId});
+  }
+
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -11,10 +16,13 @@ Template.MemesIndex.events({
    */
 });
 
-Template.MemesIndex.helpers({
-  items: function () {
-    return Memes.find({}, { sort: { createdAt: -1 } });
+Template.CircleSelectOption.helpers({
+  isSelected: function () { 
+    return (this.name == 'public') ? 'selected': '';
   }
+});
+
+Template.MemesIndex.helpers({
 });
 
 /*****************************************************************************/

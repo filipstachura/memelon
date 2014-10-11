@@ -15,6 +15,7 @@ Router.map(function () {
       this.route('home', {path: '/'});
   */
   this.route('memes.index', {path: '/'});
+  this.route('circle.memes', {path: '/circle/:_id', controller: 'MemesIndexController'});
   this.route('create.meme', {path: '/create_meme'});
   this.route('circles.index', {path: '/circles'});
 });

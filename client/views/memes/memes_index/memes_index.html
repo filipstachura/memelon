@@ -3,6 +3,8 @@
 
     {{> Sidebar }}
 
+    {{> CircleSelect }}
+
     <div id="content-container">
       {{#each items}}
           <div class="row">
@@ -16,5 +18,44 @@
             {{> CreateMemeButton }}
         </div>
     </div>
+</template>
+
+
+<template name="CircleSelect">
+  <div class="row" id="select-circle">
+    <select id="selected_circle">
+      {{#each circles}}
+        {{> CircleSelectOption }}
+      {{/each}}
+    </select>
+  </div>
+</template>
+
+<template name="CircleSelectOption">
+  <option value="{{ _id }}" class="select-circle-option" {{ isSelected }}> {{ name }} </option>
+</template>
+
+
+
+<template name="Sidebar">
+<div class="sidebar">
+  <div class="row">
+    <b>Circles</b>
+  </div>
+  <div class="row">
+    {{#each circles}}
+        <div class="row">
+            <!-- <a href="{{pathFor route='circle.memes'}}"> {{ name }} </a> -->
+            {{ name }}
+        </div>
+    {{/each}}
+  </div>
+  <div class="row">
+    Create circle
+  </div>
+  <div class="row">
+    Logout
+  </div>
+</div>
 </template>
 
