@@ -48,7 +48,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 Meme = function(imageBase64, canvas, top, bottom) {
-
+  var canvasWidth = config.picture.requirements.width;
+  var canvasHeight = config.picture.requirements.height;
 
 	/*
 	Default top and bottom
@@ -97,7 +98,7 @@ Meme = function(imageBase64, canvas, top, bottom) {
 		canvas.width = w;
 		canvas.height = h;
 	};
-	setCanvasDimensions(image.width, image.height);	
+  setCanvasDimensions(canvasWidth, canvasHeight);
 
 	/*
 	Draw a centered meme string
@@ -161,12 +162,32 @@ Meme = function(imageBase64, canvas, top, bottom) {
 	*/
 
 	image.onload = function() {
+    var multiplier = 1;
+    var heightMultiplier = 1;
+    var widthMultiplier = 1;
 
 		// Set dimensions
-		setCanvasDimensions(this.width, this.height);
+		setCanvasDimensions(canvasWidth, canvasHeight);
+
+    if ((canvasWidth) && (image.width < canvasWidth)) {
+        widthMultiplier =  image.width / canvasWidth;
+    }
+
+    if ((canvasHeight) && (image.height < canvasHeight)) {
+        heightMultiplier = image.height / canvasHeight;
+    }
+
+    
+    multiplier = widthMultiplier < heightMultiplier ? widthMultiplier : heightMultiplier;
+
+    var newImageHeight = canvasHeight * multiplier;
+    var newImageWidth = canvasWidth * multiplier;
+
+    var imageStartY = newImageHeight < image.height ? Math.round((image.height - newImageHeight) / 2) : 0;
+    var imageStartX = newImageWidth < image.width ? Math.round((image.width - newImageWidth) / 2) : 0;
 
 		// Draw the image
-		context.drawImage(image, 0, 0);
+		context.drawImage(image, imageStartX, imageStartY, newImageWidth, newImageHeight, 0, 0, canvasWidth, canvasHeight);
 
 		// Set up text variables
 		context.fillStyle = 'white';
