@@ -1,8 +1,8 @@
 
 /*****************************************************************************/
-/* MemesIndex: Event Handlers and Helpersss .js*/
+/* Sidebar: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MemesIndex.events({
+Template.Sidebar.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -11,22 +11,19 @@ Template.MemesIndex.events({
    */
 });
 
-Template.MemesIndex.helpers({
-  items: function () {
-    return Memes.find({}, { sort: { createdAt: -1 } });
-  }
+Template.Sidebar.helpers({
 });
 
 /*****************************************************************************/
-/* MemesIndex: Lifecycle Hooks */
+/* Sidebar: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MemesIndex.created = function () {
+Template.Sidebar.created = function () {
 };
 
-Template.MemesIndex.rendered = function () {
+Template.Sidebar.rendered = function () {
 };
 
-Template.MemesIndex.destroyed = function () {
+Template.Sidebar.destroyed = function () {
 };
 
 

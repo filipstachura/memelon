@@ -1,0 +1,22 @@
+
+<template name="Sidebar">
+<div class="sidebar">
+  <div class="row">
+    <b>Circles</b>
+  </div>
+  <div>
+    {{#each circles}}
+        <div class="row">
+            {{> CircleItem }}
+        </div>
+    {{/each}}
+  </div>
+  <div class="row">
+    Create circle
+  </div>
+  <div class="row">
+    Logout
+  </div>
+</div>
+</template>
+
