@@ -3,9 +3,10 @@
 /*****************************************************************************/
 config = {
   picture: {
-    size: {
-      width:600,
-      height:450
+    requirements: {
+      width: 600,
+      height: 450,
+      quality: 80
     }
   }
 };
