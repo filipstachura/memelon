@@ -1,8 +1,8 @@
 
 /*****************************************************************************/
-/* MasterLayout: Event Handlers and Helpersss .js*/
+/* RawLayout: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MasterLayout.events({
+Template.RawLayout.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -11,7 +11,7 @@ Template.MasterLayout.events({
    */
 });
 
-Template.MasterLayout.helpers({
+Template.RawLayout.helpers({
   /*
    * Example:
    *  items: function () {
@@ -21,15 +21,15 @@ Template.MasterLayout.helpers({
 });
 
 /*****************************************************************************/
-/* MasterLayout: Lifecycle Hooks */
+/* RawLayout: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MasterLayout.created = function () {
+Template.RawLayout.created = function () {
 };
 
-Template.MasterLayout.rendered = function () {
+Template.RawLayout.rendered = function () {
 };
 
-Template.MasterLayout.destroyed = function () {
+Template.RawLayout.destroyed = function () {
 };
 
 
