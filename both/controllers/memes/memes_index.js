@@ -1,10 +1,14 @@
 MemesIndexController = RouteController.extend({
+  layoutTemplate: 'MasterLayout',
   template: 'MemesIndex',
  
   waitOn: function () {
     var circleId = this.params._id;
     console.log("circleId" + circleId);
-    return [Meteor.subscribe('memes_index', circleId), Meteor.subscribe('circles_index')];
+    var circles = Meteor.subscribe('circles_index');
+    var memes = Meteor.subscribe('memes_index', circleId);
+    NProgress.start();
+    return [circles, memes];
   },
 
   data: function () {
@@ -27,6 +31,13 @@ MemesIndexController = RouteController.extend({
   },
 
   action: function () {
-    this.render();
+    if (this.ready()) {
+      NProgress.done();
+      //this.render();
+    } else {
+    }
+//      
+//      this.stop();
+//    }
   }
 });
