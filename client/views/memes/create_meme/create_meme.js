@@ -11,7 +11,7 @@ Template.CreateMeme.events({
   'click .circle-button': function(event, template) {
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
-      var imageBase64 = template.find("#preview-canvas").toDataURL();
+      var imageBase64 = template.find("#preview-canvas").toDataURL("image/jpeg");
       Memes.insert({
         picture: imageBase64,
         topText: topText,
