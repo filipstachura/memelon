@@ -7,8 +7,7 @@
   border: 1px solid #999;
   font: inherit;
 }
-#canvas {
+#preview-canvas {
   display: block;
   margin: 1em auto;
-  width: 100px;
 }
