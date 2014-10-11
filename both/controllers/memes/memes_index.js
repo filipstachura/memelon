@@ -13,6 +13,7 @@ MemesIndexController = RouteController.extend({
       }
 
       return {
+        currentCircle: Circles.findOne({_id: circleId}),
         circles: Circles.find({}, { sort: { name: 1 } }),
         items: function () {
           return Memes.find(
