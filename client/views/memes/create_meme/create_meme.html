@@ -4,18 +4,29 @@
     <canvas id="preview-canvas"></canvas>
     <input id="top-line" placeholder="Top text"><br />
     <input id="bottom-line" placeholder="Bottom text">
-    <h2>Choose a circle:</h2>
-    <div class="btn-group-vertical">
-      {{#each circles}}
-        <button type="button" class="btn btn-default circle-button">{{ name }}</button>
-      {{/each}}
-    </div>
 
+
+
+
+  <div id="save-button-container">
     <div id="bottom-panel-holder">
+
+<div class="btn-group dropup">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+    #{{ selectedCircle.name }} <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    {{#each circles}}
+      <li><a class="circle-button" value="{{ _id }}">#{{ name }}</a></li>
+    {{/each}}
+  </ul>
+</div>
+
         <button id="save-meme" class="btn"> 
-            <i class="fa fa-4x fa-camera-retro"></i> 
+            <i class="fa fa-4x fa-rocket"></i> 
         </button>
     </div>
+  </div>
   </div>
 
 
