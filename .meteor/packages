@@ -8,4 +8,5 @@ iron:router@1.0.0-pre3
 mizzao:bootstrap-3
 less
 mdg:camera
+mrt:jquery-ui
 

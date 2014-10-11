@@ -1,3 +1,102 @@
 <template name="MasterLayout">
-  {{> yield}}
+
+    <!-- Header -->
+    <header class="navbar main-header">
+      <a class="navbar-brand" href="index.html"> memelon </a>
+      <ul class="nav navbar-nav navbar-left sidebar-toggle-ul">
+        <li class="navbar-main hidden-lg hidden-md">
+        <a href="javascript:void(0);" id="sidebar-toggle">
+          <span class="meta">
+            <span class="icon"><i class="fa fa-bars"></i></span>
+          </span>
+        </a>
+        </li>
+
+        <li class="navbar-main hidden-sm hidden-xs">
+        <a href="javascript:void(0);" id="sidebar-collapse">
+          <span class="meta">
+            <span class="icon"><i class="fa fa-outdent"></i></span>
+          </span>
+        </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown hide-xs-mobile">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="fixed-sidebar-link">Fixed sidebar</a></li>
+          <li><a href="#" id="fixed-navbar-link">Fixed Navbar</a></li>
+        </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown icons-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell-o"></i></a>
+        <ul class="dropdown-menu list-group">
+          <li class="list-group-item heading"><p>Notification</p></li>
+          <a href="#" class="list-group-item"><i class="fa fa-user"></i> <p>John sent you friend request</p></a>
+          <a href="#" class="list-group-item"><i class="fa fa-envelope-o"></i> <p>Sam sent important mail</p></a>
+          <a href="#" class="list-group-item"><i class="fa fa-calendar"></i> <p>You have pending job</p></a>
+          <a href="#" class="list-group-item"><i class="fa fa-money"></i> <p>Received $1826 from client</p></a>
+        </ul>
+        </li>
+
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          John <img class="img-circle" src="img/avatar.png" alt="avatar" /> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="fa fa-globe"></i> Notification <span class="label label-danger"> 5</span></a></li>
+          <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+          <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
+          <li><a href="#"><i class="fa fa-share"></i> Logout</a></li>
+        </ul>
+        </li>
+      </ul>
+    </header>
+
+    <div class="sidebar sidebar-left">
+      <div class="content">
+        <ul class="nav nav-tabs nav-justified sidetabs">
+          <li class="active"><a href="#home" data-toggle="tab" ><i class="fa fa-compass"></i> </a></li>
+          <li><a href="#users" data-toggle="tab"><i class="fa fa-user"></i> </a></li>
+        </ul>
+
+        <div class="tab-content sidetabs">
+          <div class="tab-pane active" id="home">
+            <ul class="sidemenu">
+              <li class="sidebar-header">Home</li>
+              <li class="active">
+              <a href="index.html">
+                <span class="icon"><i class="fa fa-dashboard"></i></span>
+                <span class="name">Circles</span>
+                <span class="number pull-right"><span class="label label-primary">4</span></span>
+              </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-pane" id="users">
+            <ul class="sidemenu">
+              <li class="sidebar-header">Users</li>
+              <li class="active">
+              <a href="index.html">
+                <span class="icon"><i class="fa fa-home"></i></span>
+                <span class="name">Users</span>
+                <span class="number pull-right"><span class="label label-danger">5</span></span>
+              </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <section id="main-wrapper">
+      {{> yield}}
+    </section>
+
 </template>
