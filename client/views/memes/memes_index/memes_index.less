@@ -3,11 +3,11 @@
 /*****************************************************************************/
 
 #content-container {
-  height: 90%;
+  height: 100%;
   width: 100%;
+  position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: rgb(245, 245, 245);
 }
 
 #content-container .row {
@@ -15,8 +15,12 @@
 }
 
 #button-container {
-  height: 5%;
-  padding: 0;
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
 }
 
 #content-container div.row:nth-child(even) {

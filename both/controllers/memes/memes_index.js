@@ -2,7 +2,9 @@ MemesIndexController = RouteController.extend({
   template: 'MemesIndex',
  
   waitOn: function () {
-    return [Meteor.subscribe('memes_index'), Meteor.subscribe('circles_index')];
+    var circleId = this.params._id;
+    console.log("circleId" + circleId);
+    return [Meteor.subscribe('memes_index', circleId), Meteor.subscribe('circles_index')];
   },
 
   data: function () {
@@ -17,12 +19,7 @@ MemesIndexController = RouteController.extend({
         currentCircleName: currentCircleName,
         circles: Circles.find({}, { sort: { name: 1 } }),
         items: function () {
-          return Memes.find(
-            {
-              circle: circleId,
-            }, {
-              sort: { createdAt: -1 }
-            });
+          return Memes.find({});
         }
       }
     }
