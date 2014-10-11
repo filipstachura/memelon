@@ -1,21 +1,4 @@
 
 <template name="CircleItem">
-  {{#linkTo route='circle.memes' }} {{ name }} {{/linkTo}}
+  {{#linkTo route='circle.memes' }} #{{ name }} {{/linkTo}}
 </template>
-
-
-<template name="CircleSelect">
-  <div class="row" id="select-circle">
-    <select id="selected_circle">
-      {{#each circles}}
-        {{> CircleSelectOption }}
-      {{/each}}
-    </select>
-  </div>
-</template>
-
-<template name="CircleSelectOption">
-  <option value="{{ _id }}" class="select-circle-option" {{ isSelected }}> {{ name }} </option>
-</template>
-
-
