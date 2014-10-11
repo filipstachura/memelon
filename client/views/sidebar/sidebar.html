@@ -3,7 +3,7 @@
 
     <!-- Header -->
     <header class="navbar main-header">
-      <a class="navbar-brand" href="index.html"> memelon </a>
+      <a class="navbar-brand"> memelon </a>
       <ul class="nav navbar-nav navbar-left sidebar-toggle-ul">
         <li class="navbar-main hidden-lg hidden-md">
         <a href="javascript:void(0);" id="sidebar-toggle">
@@ -24,8 +24,10 @@
 
       <ul class="nav navbar-nav navbar-left">
         <li class="dropdown hide-xs-mobile">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ currentCircle.name }}<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ currentCircleName }}<b class="caret"></b></a>
         <ul class="dropdown-menu">
+          <li>{{#linkTo route='memes.index'}} All {{/linkTo}}</li>
+          <li class="divider"></li>
           {{#each circles}}
               <li>{{> CircleItem }}</li>
           {{/each}}

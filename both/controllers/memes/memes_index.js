@@ -8,12 +8,13 @@ MemesIndexController = RouteController.extend({
   data: function () {
     if (this.ready()) {
       var circleId = this.params._id;
-      if (!circleId) {
-        circleId = Circles.findOne({ name: 'public' })._id
+      var currentCircleName = "All newest";
+      if (circleId) {
+        currentCircleName = '#' + Circles.findOne({_id: circleId}).name;
       }
 
       return {
-        currentCircle: Circles.findOne({_id: circleId}),
+        currentCircleName: currentCircleName,
         circles: Circles.find({}, { sort: { name: 1 } }),
         items: function () {
           return Memes.find(
