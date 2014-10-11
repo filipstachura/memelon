@@ -19,7 +19,7 @@ MemesIndexController = RouteController.extend({
         currentCircleName: currentCircleName,
         circles: Circles.find({}, { sort: { name: 1 } }),
         items: function () {
-          return Memes.find({});
+          return Memes.find({}, { sort: { createdAt: -1 } });
         }
       }
     }
