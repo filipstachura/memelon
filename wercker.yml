@@ -11,4 +11,4 @@ build:
         code: sudo npm install -g laika
     - script:
         name: run laika
-        code: laika -D
+        code: laika
