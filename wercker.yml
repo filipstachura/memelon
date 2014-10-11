@@ -6,3 +6,10 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) runnin:g"
+deploy:
+  steps:
+    - script:
+        name: deploy to memelon.meteor.com 
+        code: |
+          curl https://install.meteor.com/ | sh
+          meteor deploy memelon.meteor.com
