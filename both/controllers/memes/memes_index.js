@@ -13,6 +13,7 @@ MemesIndexController = RouteController.extend({
       var currentCircleName = "All newest";
       if (circleId) {
         currentCircleName = '#' + Circles.findOne({_id: circleId}).name;
+        Session.set("addToCircleId", circleId);
       }
 
       return {

@@ -15,14 +15,15 @@ Template.CreateMeme.events({
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
       var imageBase64 = template.find("#preview-canvas").toDataURL("image/jpeg");
+      var circleId = Session.get("addToCircleId");
       Memes.insert({
         picture: imageBase64,
         topText: topText,
         bottomText: bottomText,
         createdAt: new Date,
-        circle: Session.get("addToCircleId")
+        circle: circleId
       });
-      Router.go("memes.index");
+      Router.go("circle.memes", {_id: circleId});
   }
 });
 
