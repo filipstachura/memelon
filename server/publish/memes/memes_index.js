@@ -2,6 +2,13 @@
 /* MemesIndex Publish Functions
 /*****************************************************************************/
 
-Meteor.publish('memes_index', function () {
-  return Memes.find();
+Meteor.publish('memes_index', function (circleId) {
+  var selector = circleId ? {circle: circleId} : {}
+
+  var cursor = Memes.find(
+    selector, {
+    sort: { createdAt: -1 },
+    limit: 30
+  });
+  return cursor;
 });
