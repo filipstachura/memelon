@@ -1,5 +1,6 @@
 CreateMemeController = RouteController.extend({
   waitOn: function () {
+    return Meteor.subscribe('circles_index');
   },
 
   data: function () {

@@ -1,0 +1,13 @@
+<template name="CreateMeme">
+  <div id="content-container">
+    <input id="top-line" placeholder="top line"><br />
+    <canvas id="preview-canvas"></canvas>
+    <input id="bottom-line" placeholder="bottom line">
+    <h2>Choose a circle:</h2>
+    <div class="btn-group-vertical">
+      {{#each circles}}
+        <button type="button" class="btn btn-default circle-button">{{ name }}</button>
+      {{/each}}
+    </div>
+  </div>
+</template>

@@ -8,7 +8,7 @@ Template.CreateMeme.events({
       var bottomText = template.find('#bottom-line').value;
       Meme(Session.get("newPicture"), 'preview-canvas', topText, bottomText);
   },
-  'click #save': function(event, template) {
+  'click .circle-button': function(event, template) {
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
       var imageBase64 = template.find("#preview-canvas").toDataURL();
@@ -16,19 +16,17 @@ Template.CreateMeme.events({
         picture: imageBase64,
         topText: topText,
         bottomText: bottomText,
-        createdAt: new Date
+        createdAt: new Date,
+        circle: this._id
       });
       Router.go("memes.index");
   }
 });
 
 Template.CreateMeme.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+   circles: function () {
+     return Circles.find({}, { sort: { createdAt: -1 } });
+   }
 });
 
 /*****************************************************************************/
