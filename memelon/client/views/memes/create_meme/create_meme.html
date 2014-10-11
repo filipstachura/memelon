@@ -1,6 +1,26 @@
 <template name="CreateMeme">
-  <input id="top-line" placeholder="top line"><br />
-  <canvas id="canvas"></canvas><br />
-  <input id="bottom-line" placeholder="bottom line">
-  <button id="save" class="btn btn-success">Save meme</button>
+  <div class=".col-md-4">
+    <div class="row">
+      <input id="top-line" placeholder="top line"><br />
+      <input id="bottom-line" placeholder="bottom line">
+    </div>
+
+    <div class="row">
+      <h2>Choose a circle:</h2>
+      <div class="btn-group-vertical">
+        {{#each circles}}
+        <button type="button" class="btn btn-default circle-button" value="{{ _id }}">{{ name }}</button>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="row">
+      <button id="save" class="btn btn-success">Save meme</button>
+    </div>
+  </div>
+
+  <div class=".col-md-8">
+    <canvas id="canvas"></canvas>
+  </div>
+
 </template>
