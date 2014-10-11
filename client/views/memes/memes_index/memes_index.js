@@ -18,7 +18,7 @@ Template.MemesIndex.events({
 
 Template.CircleSelectOption.helpers({
   isSelected: function () { 
-    return (name == 'public') ? 'selected': name;
+    return (this.name == 'public') ? 'selected': '';
   }
 });
 
