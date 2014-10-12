@@ -6,7 +6,12 @@ Template.CreateMeme.events({
   'keyup input': function (event, template) {
       var topText = template.find('#top-line').value.toUpperCase();
       var bottomText = template.find('#bottom-line').value.toUpperCase();
-      Meme(Session.get("newPicture"), 'preview-canvas', topText, bottomText);
+      var saveCanvas = template.find('#save-canvas');
+      Meme(Session.get("newPicture"), saveCanvas, topText, bottomText);
+      setTimeout(function() {
+          var previewImg = template.find('#preview-img');
+          previewImg.src = saveCanvas.toDataURL("image/jpeg");
+      });
   },
   'click .circle-button': function(event, template) {
     Session.set("addToCircleId", $(event.target).attr("value"));
@@ -14,7 +19,7 @@ Template.CreateMeme.events({
   'click #save-meme': function(event, template) {
       var topText = template.find('#top-line').value;
       var bottomText = template.find('#bottom-line').value;
-      var imageBase64 = template.find("#preview-canvas").toDataURL("image/jpeg");
+      var imageBase64 = template.find("#save-canvas").toDataURL("image/jpeg");
       var circleId = Session.get("addToCircleId");
       Memes.insert({
         picture: imageBase64,
@@ -47,12 +52,19 @@ Template.CreateMeme.helpers({
 
 /*****************************************************************************/
 /* CreateMeme: Lifecycle Hooks */
+
 /*****************************************************************************/
 Template.CreateMeme.created = function () {
 };
 
 Template.CreateMeme.rendered = function () {
-  Meme(Session.get("newPicture"), 'preview-canvas');
+  Meme(Session.get("newPicture"), 'save-canvas');
+
+  setTimeout(function() {
+      var previewImg = document.getElementById('preview-img');
+      var saveCanvas = document.getElementById('save-canvas');
+      previewImg.src = saveCanvas.toDataURL("image/jpeg");
+  });
 };
 
 Template.CreateMeme.destroyed = function () {

@@ -6,9 +6,8 @@
   height: 100%;
   width: 100%;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  padding-bottom: 70px;
 }
 
 #top-line, #bottom-line {
@@ -17,11 +16,18 @@
   font: inherit;
 }
 
-#preview-canvas {
+#preview-img {
   display: block;
   //margin: 1em auto;
   float: none;
   margin: 0 auto;
+  max-width: 600px;
+  width: 90%;
+}
+
+#save-canvas {
+  position: absolute;
+  left: -9999px;
 }
 
 #bottom-panel-holder  {
@@ -50,3 +56,6 @@
   background-color: white;
 }
 
+.selected-circle-name {
+  width: 8em;
+}

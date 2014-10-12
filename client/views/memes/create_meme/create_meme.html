@@ -4,7 +4,7 @@
 
     <div class="col-sm-12">
       <div class="row">
-        <canvas id="preview-canvas"></canvas>
+        <img id="preview-img" />
       </div>
     </div>
 
@@ -16,31 +16,26 @@
           <input type="text" id="bottom-line" class="form-control" placeholder="Bottom text">
       </div>
     </div>
-
-
-
-
-            <div id="save-button-container">
-              <div id="bottom-panel-holder">
-
-          <div class="btn-group dropup">
-            <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-              #{{ selectedCircle.name }} <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              {{#each circles}}
-                <li><a class="circle-button" value="{{ _id }}">#{{ name }}</a></li>
-              {{/each}}
-            </ul>
-          </div>
-
-                  <button id="save-meme" class="btn"> 
-                      <i class="fa fa-4x fa-rocket"></i> 
-                  </button>
-              </div>
-            </div>
-
 </div>
 
+<div id="save-button-container">
+  <div id="bottom-panel-holder">
 
+    <div class="btn-group dropup">
+      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+        <div class="selected-circle-name" style="float:left">#{{ selectedCircle.name }}</div> <div style="float:right"><span class="caret"></span></div>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        {{#each circles}}
+        <li><a class="circle-button" value="{{ _id }}">#{{ name }}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <button id="save-meme" class="btn"> 
+      <i class="fa fa-4x fa-rocket"></i> 
+    </button>
+  </div>
+</div>
+<canvas id="save-canvas"></canvas>
 </template>
