@@ -23,7 +23,7 @@
 
     <div class="btn-group dropup">
       <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
-        #{{ selectedCircle.name }} <span class="caret"></span>
+        <div class="selected-circle-name" style="float:left">#{{ selectedCircle.name }}</div> <div style="float:right"><span class="caret"></span></div>
       </button>
       <ul class="dropdown-menu" role="menu">
         {{#each circles}}
