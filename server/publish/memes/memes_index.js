@@ -8,7 +8,7 @@ Meteor.publish('memes_index', function (circleId) {
   var cursor = Memes.find(
     selector, {
     sort: { createdAt: -1 },
-    limit: 5
+    limit: 15
   });
   return cursor;
 });
